@@ -31,6 +31,10 @@ function toast({
                 <i class="fa-solid fa-xmark"></i>
             </div>`;
         main.appendChild(toast);
+
+        setTimeout(function() {
+            main.removeChild(toast);
+        }, duration + 1000);
     }
 }
 

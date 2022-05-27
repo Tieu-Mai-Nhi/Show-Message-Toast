@@ -69,6 +69,7 @@ body > div {
     padding: 20px 0;
     min-width: 400px;
     max-width: 450px;
+    transition: all linear 0.3s;
 }
 
 @keyframes slideInLeft {
