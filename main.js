@@ -14,11 +14,25 @@ function toast({
             error: 'fa-solid fa-circle-exclamation',
         };
 
+        // Auto remove toast
+        const autoRemoveID = setTimeout(function() {
+            main.removeChild(toast);
+        }, duration + 1000);
+
+        // Remove when click
+        toast.onclick = function (e) {
+            if (e.target.closest('.toast__close')) {
+                main.removeChild(toast);
+                clearTimeout(autoRemoveID);
+            }
+        }
+
         const icon = icons[type];
         const delay = (duration/1000).toFixed(2);
 
         toast.classList.add('toast', `toast--${type}`);
         toast.style.animation = `slideInLeft ease .3s, fadeOut linear 1s ${delay}s forwards`
+        
         toast.innerHTML = `
             <div class="toast__icon">
                 <i class="${icon}"></i>
@@ -31,13 +45,8 @@ function toast({
                 <i class="fa-solid fa-xmark"></i>
             </div>`;
         main.appendChild(toast);
-
-        setTimeout(function() {
-            main.removeChild(toast);
-        }, duration + 1000);
     }
 }
-
 
 
 function showSuccessToast() {
@@ -45,7 +54,7 @@ function showSuccessToast() {
         title: 'Thành công!',
         message: 'Bạn đã đăng ký tài khoản thành công',
         type: 'success',
-        duration: 1000
+        duration: 3000
     })
 }
 
@@ -54,6 +63,6 @@ function showErrorToast() {
         title: 'Thất bại!',
         message: 'Có lỗi xảy ra, vui lòng kiểm tra lại',
         type: 'error',
-        duration: 1000
+        duration: 3000
     })
 }
