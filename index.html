@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./style.css">
+    <link rel="icon" type="image/x-icon" href="https://cdn.allthings.how/wp-content/uploads/2021/10/allthings.how-how-to-disable-notification-badges-in-windows-11-taskbar-notification-badge-759x427.png?width=800">
     <title>Show message</title>
 </head>
 <body>
@@ -14,68 +15,14 @@
         <button class="btn btn--warn">OK</button>
         <button class="btn btn--danger">TRY AGAIN</button>
     </div> -->
-    <div id="toast">
-        <!-- Success -->
-        <div class="toast toast--success">
-            <div class="toast__icon">
-                <i class="fa-solid fa-circle-check"></i>
-            </div>
-            <div class="toast__body">
-                <h3 class="toast__title">Success</h3>
-                <p class="toast__msg">Bạn đã đăng ký tài khoản thành công</p>
-            </div>
-            <div class="toast__close">
-                <i class="fa-solid fa-xmark"></i>
-            </div>
-        </div>
-    
-        <!-- Info -->
-        <div class="toast toast--info">
-            <div class="toast__icon">
-                <i class="fa-solid fa-circle-check"></i>
-            </div>
-            <div class="toast__body">
-                <h3 class="toast__title">Info</h3>
-                <p class="toast__msg">Bạn đã đăng ký tài khoản thành công</p>
-            </div>
-            <div class="toast__close">
-                <i class="fa-solid fa-xmark"></i>
-            </div>
-        </div>
-    
-        <!-- Warning -->
-        <div class="toast toast--warning">
-            <div class="toast__icon">
-                <i class="fa-solid fa-circle-check"></i>
-            </div>
-            <div class="toast__body">
-                <h3 class="toast__title">Warning</h3>
-                <p class="toast__msg">Có lỗi, xin vui lòng thử lại</p>
-            </div>
-            <div class="toast__close">
-                <i class="fa-solid fa-xmark"></i>
-            </div>
-        </div>
-    
-        <!-- Error -->
-        <div class="toast toast--error">
-            <div class="toast__icon">
-                <i class="fa-solid fa-circle-check"></i>
-            </div>
-            <div class="toast__body">
-                <h3 class="toast__title">Error</h3>
-                <p class="toast__msg">Bạn đã đăng ký tài khoản thành công</p>
-            </div>
-            <div class="toast__close">
-                <i class="fa-solid fa-xmark"></i>
-            </div>
-        </div>
+
+    <div id="toast">     
     </div>
 
     <!-- btn -->
     <div>
-        <div class="btn btn--success">Show success</div>
-        <div class="btn btn--danger">Show error toast</div>
+        <div onclick=showSuccessToast() class="btn btn--success">Show success</div>
+        <div onclick=showErrorToast() class="btn btn--danger">Show error toast</div>
     </div>  
 
     <script src="./main.js"></script>

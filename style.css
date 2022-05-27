@@ -69,7 +69,6 @@ body > div {
     padding: 20px 0;
     min-width: 400px;
     max-width: 450px;
-    animation: slideInLeft ease .3s, fadeOut linear 1s forwards;
 }
 
 @keyframes slideInLeft {
